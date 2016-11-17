@@ -23,6 +23,17 @@ public class App {
 	 * class Date
 	 * */
 	private static File currentDir = new File(System.getProperty("user.dir"));
+	
+	private static Command parseCommand(String commandString){
+		String[] args = commandString.split(" ");
+		switch (args[0]){
+		case "dir":
+		return new DirCommand(currentDir);
+		
+		default:
+		return null;
+		}
+	}
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String command = sc.nextLine();
@@ -31,6 +42,11 @@ public class App {
 			
 			//TODO Define command
 			command = sc.nextLine();
+			
+			Command cmd = parseCommand(command);
+			if(cmd != null)
+				cmd.execute();
+			
 		}
 		
 
