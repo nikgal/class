@@ -5,14 +5,14 @@ import java.util.Map;
 
 public class DirCommand extends Command {
 
-	private File currentDirectory;
+	
 	public DirCommand(File currentDirectory, Map<String, String> args){
 		super(args);
-		this.currentDirectory = currentDirectory;
+	
 	}
 	@Override
 	public void execute() {
-		File[] files = currentDirectory.listFiles();
+		File[] files = App.currentDir.listFiles();
 		for(File file: files){
 			System.out.println(file.getAbsolutePath());
 		}

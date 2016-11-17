@@ -5,11 +5,9 @@ import java.util.Map;
 
 public class CdCommand extends Command {
 
-	private File currentDir;
 	
 	public CdCommand(File currentDirectory, Map<String, String> args){
 		super(args);
-		this.currentDir=currentDir;
 		
 	}
 	
@@ -23,7 +21,7 @@ public class CdCommand extends Command {
 			if (!file.isDirectory()){
 				System.err.println("Select dir! ");
 			} else{
-				currentDir = file;
+				App.currentDir = file;
 			}
 		}
 

@@ -24,13 +24,13 @@ public class App {
 	 * 
 	 * class Date
 	 * */
-	private static File currentDir = new File(System.getProperty("user.dir"));
+	static File currentDir = new File(System.getProperty("user.dir"));
 	
 	private static Command parseCommand(String commandString){
 		String[] args = commandString.split(" ");
 		switch (args[0]){
 		case "dir":
-		return new DirCommand(currentDir,parseArguments(String[] args));
+		return new DirCommand(currentDir,arguments);
 		
 		default:
 		return null;
