@@ -1,6 +1,8 @@
 package by.galov.lesson2016_11_17;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class App {
@@ -28,11 +30,18 @@ public class App {
 		String[] args = commandString.split(" ");
 		switch (args[0]){
 		case "dir":
-		return new DirCommand(currentDir);
+		return new DirCommand(currentDir,parseArguments(String[] args));
 		
 		default:
 		return null;
 		}
+	}
+	private static Map<String, String> parseArguments(String[] args){
+		Map<String,String> arguments = new HashMap<>();
+		for(int i =1;i<args.length;i++){
+			arguments.put("arg"+i, args[i]);
+		}
+		return arguments;
 	}
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
