@@ -13,13 +13,18 @@ public class TestManager {
         String[] args = commandString.split(" ");
         switch (args[0]){
             case "dir":
-            return new DirCommand(currentDir,parseArguments(args));
-            case "cd": return new CdCommand(currentDir, parseArguments(args));
+                return new DirCommand(currentDir,parseArguments(args));
+            case "cd": 
+                return new CdCommand(currentDir, parseArguments(args));
+            case "pwd":
+                return new PwdCommand(currentDir, parseArguments(args));
+            case "cp":
+                return new CpCommand(parseArguments(args));
             default:
             return null;
         }
     }
-    private static Map<String, String> parseArguments(String[] args){
+    public static Map<String, String> parseArguments(String[] args){
         Map<String,String> arguments = new HashMap<>();
         for(int i =1;i<args.length;i++){
             arguments.put("arg"+i, args[i]);
@@ -29,10 +34,10 @@ public class TestManager {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         Scanner sc = new Scanner(System.in);
-        String command = sc.nextLine();
+        String command;
         
-        while(!command.equals("exit")){ // equals - by symbol  == - by reference
-            
+        do{
+            System.out.print(currentDir.toString()+" > ");
             //TODO Define command
             command = sc.nextLine();
             
@@ -40,7 +45,9 @@ public class TestManager {
             if(cmd != null)
                 cmd.execute();
             
-        }
+        }while(!command.equals("exit"));
+        
+        sc.close();
 
     }
 
