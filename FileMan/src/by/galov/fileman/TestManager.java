@@ -28,6 +28,8 @@ public class TestManager {
                 return new DateCommand();
             case "find": 
                 return new FindCommand(parseArguments(args));
+            case "mkdir":
+                return new MkdirCommand(parseArguments(args));
             default:
             return null;
         }
