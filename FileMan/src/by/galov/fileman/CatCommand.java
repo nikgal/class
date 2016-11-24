@@ -20,17 +20,20 @@ public class CatCommand extends Command {
         String s;
         StringBuilder sb = new StringBuilder();
         try {
-            BufferedReader in = new BufferedReader(new FileReader(file));
-            while((s=in.readLine()) != null){
-                sb.append(s+"\n");
+            if(file.exists()){
+                BufferedReader in = new BufferedReader(new FileReader(file));
+                System.out.println("Openning "+file.getAbsolutePath()+"...");
+                while((s=in.readLine()) != null){
+                    sb.append(s+"\n");
+                }
+                System.out.println(sb.toString());
+                in.close();
+            }else{
+                System.out.println("File does not exists");
             }
-            in.close();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            System.out.println("Can not read the file! ");
         }
-        System.out.println(sb.toString());
-        // TODO Auto-generated method stub
         
     }
 
