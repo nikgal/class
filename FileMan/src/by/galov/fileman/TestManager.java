@@ -30,6 +30,8 @@ public class TestManager {
                 return new FindCommand(parseArguments(args));
             case "mkdir":
                 return new MkdirCommand(parseArguments(args));
+            case "touch": 
+                return new TouchCommand(parseArguments(args));
             default:
             return null;
         }
