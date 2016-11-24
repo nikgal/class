@@ -29,8 +29,8 @@ public class CpCommand extends Command {
 
     @Override
     public void help() {
-        // TODO Auto-generated method stub
-
+        System.out.println("cp path_from path_to - "
+                + "copy file from path_from to path_to");
     }
 
 }

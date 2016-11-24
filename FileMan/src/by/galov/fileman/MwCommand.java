@@ -28,7 +28,7 @@ public class MwCommand extends Command {
 
     @Override
     public void help() {
-        // TODO Auto-generated method stub
+        System.out.println("mw path1 path2 - movw file from path1 to path2");
 
     }
 

@@ -20,8 +20,7 @@ public class DirCommand extends Command {
 
     @Override
     public void help() {
-        // TODO Auto-generated method stub
-
+        System.out.println("dir - show current directory list");
     }
 
 }

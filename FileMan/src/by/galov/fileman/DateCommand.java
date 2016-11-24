@@ -24,8 +24,8 @@ public class DateCommand extends Command {
 
     @Override
     public void help() {
-        // TODO Auto-generated method stub
-
+        
+        System.out.println("date - current date");
     }
 
 }

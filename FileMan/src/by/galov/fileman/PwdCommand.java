@@ -17,7 +17,7 @@ public class PwdCommand extends Command {
 
     @Override
     public void help() {
-        // TODO Auto-generated method stub
+        System.out.println("pwd - show current dir");
 
     }
 

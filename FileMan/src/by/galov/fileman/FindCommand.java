@@ -37,8 +37,7 @@ public class FindCommand extends Command {
 
     @Override
     public void help() {
-        // TODO Auto-generated method stub
-
+        System.out.println("find file_name path - search file_name in path");
     }
 
 }

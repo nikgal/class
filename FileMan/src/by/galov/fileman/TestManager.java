@@ -54,8 +54,15 @@ public class TestManager {
             command = sc.nextLine();
             
             Command cmd = parseCommand(command);
-            if(cmd != null)
-                cmd.execute();
+            if(cmd != null){
+                if(cmd.argument.get("arg1") !=null &&
+                        cmd.argument.get("arg1").equals("help")){
+                    cmd.help();
+                }else{
+                    cmd.execute();
+                }
+            }
+               
             
         }while(!command.equals("exit"));
         

@@ -29,7 +29,7 @@ public class CdCommand extends Command {
 
     @Override
     public void help() {
-        // TODO Auto-generated method stub
+        System.out.println("cd direct - change directory");
 
     }
 

@@ -20,7 +20,7 @@ public class MkdirCommand extends Command {
 
     @Override
     public void help() {
-        // TODO Auto-generated method stub
+        System.out.println("mkdir path - create directory in path");
 
     }
 
