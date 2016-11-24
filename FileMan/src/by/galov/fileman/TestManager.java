@@ -20,6 +20,8 @@ public class TestManager {
                 return new PwdCommand(currentDir, parseArguments(args));
             case "cp":
                 return new CpCommand(parseArguments(args));
+            case "mv":
+                return new MwCommand(parseArguments(args));
             default:
             return null;
         }
