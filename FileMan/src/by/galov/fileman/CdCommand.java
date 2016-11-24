@@ -19,7 +19,7 @@ public class CdCommand extends Command {
         } else{
             File file = new File(newDir);
             if (!file.isDirectory()){
-                System.err.println("Select dir! ");
+                System.err.println("Wrong dir! ");
             } else{
                 TestManager.currentDir = file;
             }

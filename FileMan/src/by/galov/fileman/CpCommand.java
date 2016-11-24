@@ -12,19 +12,25 @@ public class CpCommand extends Command {
         super(args);
         this.from = new File(args.get("arg1"));
         this.to = new File(args.get("arg2"));
-        // TODO Auto-generated constructor stub
     }
 
     @Override
     public void execute() {
-        System.out.println("Copying "+from.toString()+" "+to.toString());
-        try {
-            Files.copy(from.toPath(), to.toPath());
-        } catch (IOException e) {
-            System.err.println("wrong path");
+        if(from.exists()){
+            if(!to.exists()){
+                System.out.println("Copying "+from.toString()+" to"
+                        + " "+to.toString()+"...");
+                try {
+                    Files.copy(from.toPath(), to.toPath());
+                } catch (IOException e) {
+                    System.err.println("wrong path");
+                }
+            }else{
+                System.err.println("Target directory is already exists ! ");
+            }
+        }else{
+            System.err.println("Object file doesn't exists!");
         }
-        // TODO Auto-generated method stub
-
     }
 
     @Override
