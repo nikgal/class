@@ -24,6 +24,10 @@ public class TestManager {
                 return new MwCommand(parseArguments(args));
             case "cat": 
                 return new CatCommand(parseArguments(args));
+            case "date": 
+                return new DateCommand();
+            case "find": 
+                return new FindCommand(parseArguments(args));
             default:
             return null;
         }
