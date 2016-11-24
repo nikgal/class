@@ -22,6 +22,8 @@ public class TestManager {
                 return new CpCommand(parseArguments(args));
             case "mv":
                 return new MwCommand(parseArguments(args));
+            case "cat": 
+                return new CatCommand(parseArguments(args));
             default:
             return null;
         }
