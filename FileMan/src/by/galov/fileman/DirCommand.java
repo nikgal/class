@@ -13,7 +13,7 @@ public class DirCommand extends Command {
     public void execute() {
         File[] files = TestManager.currentDir.listFiles();
         for(File file: files){
-            System.out.println(file.getAbsolutePath());
+            System.out.println(file.getName());
         }
 
     }

@@ -8,13 +8,15 @@ public class MkdirCommand extends Command {
     public MkdirCommand(Map<String, String> args) {
         super(args);
         this.file =new File(args.get("arg1"));
-        // TODO Auto-generated constructor stub
     }
 
     @Override
     public void execute() {
-        // TODO Auto-generated method stub
-        file.mkdir();
+        if(file.mkdir()){
+            System.out.println(file.getAbsolutePath()+" was created !");
+        }else{
+            System.err.println("it is not directory");
+        }
 
     }
 

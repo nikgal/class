@@ -10,14 +10,13 @@ public class FindCommand extends Command {
         super(args);
         this.find = args.get("arg1");
         this.file = new File(args.get("arg2"));
-        
-        // TODO Auto-generated constructor stub
     }
 
     @Override
     public void execute() {
         File[] files = file.listFiles();
         boolean fileFound = false;
+        if(file.isDirectory()){
             for(File file: files){
                 if (file.getName().equals(find)){
                     System.out.println("file was found: "+ file.getAbsolutePath());
@@ -29,10 +28,9 @@ public class FindCommand extends Command {
             if(!fileFound){
                 System.out.println("file not found! in "+ file);
             }
-           
-        
-        // TODO Auto-generated method stub
-
+        }else{
+            System.err.println("Incorrect dir!");
+        }
     }
 
     @Override

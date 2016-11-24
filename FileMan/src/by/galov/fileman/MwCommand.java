@@ -13,7 +13,6 @@ public class MwCommand extends Command {
         super(args);
         this.from = new File(args.get("arg1"));
         this.to = new File(args.get("arg2"));
-        // TODO Auto-generated constructor stub
     }
 
     @Override

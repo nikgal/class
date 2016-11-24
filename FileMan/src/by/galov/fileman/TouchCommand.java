@@ -10,18 +10,19 @@ public class TouchCommand extends Command {
     public TouchCommand(Map<String, String> args) {
         super(args);
         this.file = new File(args.get("arg1"));
-        // TODO Auto-generated constructor stub
     }
 
     @Override
     public void execute() {
         try {
-            file.createNewFile();
+            if(file.createNewFile()){
+                System.out.println("File was created");
+            }else{
+                System.out.println("file wasn't created");
+            }
         } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+           System.err.println("Couldn't create the file ");
         }
-        // TODO Auto-generated method stub
 
     }
 
