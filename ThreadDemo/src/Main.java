@@ -3,15 +3,18 @@ public class Main {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		MyThread thread = new MyThread();
-		Thread thread2 = new Thread(new Task());
 		
-		thread.start();
+		Res r = new Res();
+		Action ac1 = new Action(r, 4);
+		Action ac2 = new Action(r, 789);
 		
-		thread.join();
+		Thread t1 = new Thread(ac1);
+		Thread t2 = new Thread(ac2);
 		
-		thread2.start();
-		thread2.join();
+		t1.start();
+		t2.start();
+		
+		
 
 	}
 
