@@ -3,13 +3,22 @@ public class Res {
 	private int i;
 	
 	public synchronized void compute(int j){
+		
 		i = j;
 		try {
-			Thread.sleep(20);
+			this.wait();	
+			
+			synchronized (this) {
+				
+				Thread.sleep(20);
+				System.out.println(i*2);
+				this.notify();
+			}
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(i*2);
+		
+		
+	
 	}
 }
